@@ -1,0 +1,144 @@
+<style>
+    .table {
+        width: 900px;
+        display: table;
+    }
+    .thead,.tbody,.tfooter{
+        display: table-row-group;
+    }
+    .tr{
+        display: table-row
+    }
+    .th,.td{
+        display: table-cell;
+        border:1px solid #ccc;
+        padding 3px;
+    }
+</style>
+{{input value=search}}
+<div class="table">
+    <div class="thead">
+        <div class="tr">
+            <div class="th">
+                S.No.
+            </div>
+            <div class="th">
+                Created Date
+            </div>
+            {{#each columns as |column index|}}
+                <div class="th">
+                    {{column.id}}
+                </div>
+            {{/each}}
+        </div>
+    </div>
+    <div class="tbody">
+        {{#if rows1.show}}
+            {{#each rows1 as |row ri|}}
+            <div class="tr">
+                <div class="td">
+                    {{row.id}}
+                </div>
+                <div class="td">
+                    {{row.date}}
+                </div>
+                {{#each columns as |column index|}}
+                    <div class="td" contenteditable="true" data-id="{{row.id}}-{{column.id}}" {{action 'updateValue' row column on="keyUp"}} {{action 'updateValue' row column on="focusOut"}}>
+                        {{get row column.id}}
+                    </div>
+                {{/each}}
+            </div>
+            {{/each}}
+        {{/if}}
+        {{#if rows2.show}}
+            {{#each rows2 as |row ri|}}
+            <div class="tr">
+                <div class="td">
+                    {{row.id}}
+                </div>
+                <div class="td">
+                    {{row.date}}
+                </div>
+                {{#each columns as |column index|}}
+                    <div class="td" contenteditable="true" data-id="{{row.id}}-{{column.id}}" {{action 'updateValue' row column on="keyUp"}} {{action 'updateValue' row column on="focusOut"}}>
+                        {{get row column.id}}
+                    </div>
+                {{/each}}
+            </div>
+            {{/each}}
+        {{/if}}
+        {{#if rows3.show}}
+            {{#each rows3 as |row ri|}}
+            <div class="tr">
+                <div class="td">
+                    {{row.id}}
+                </div>
+                <div class="td">
+                    {{row.date}}
+                </div>
+                {{#each columns as |column index|}}
+                    <div class="td" contenteditable="true" data-id="{{row.id}}-{{column.id}}" {{action 'updateValue' row column on="keyUp"}} {{action 'updateValue' row column on="focusOut"}}>
+                        {{get row column.id}}
+                    </div>
+                {{/each}}
+            </div>
+            {{/each}}
+        {{/if}}
+        {{#if rows4.show}}
+            {{#each rows4 as |row ri|}}
+            <div class="tr">
+                <div class="td">
+                    {{row.id}}
+                </div>
+                <div class="td">
+                    {{row.date}}
+                </div>
+                {{#each columns as |column index|}}
+                    <div class="td" contenteditable="true" data-id="{{row.id}}-{{column.id}}" {{action 'updateValue' row column on="keyUp"}} {{action 'updateValue' row column on="focusOut"}} {{action 'updateValue' row column on="focus-out"}}>
+                        {{get row column.id}}
+                    </div>
+                {{/each}}
+            </div>
+            {{/each}}
+        {{/if}}
+        {{#if rows5.show}}
+            {{#unless rows6.disabled}}
+                {{#each rows5 as |row ri|}}
+                <div class="tr">
+                    <div class="td">
+                        {{row.id}}
+                    </div>
+                    <div class="td">
+                        {{row.date}}
+                    </div>
+                    {{#each columns as |column index|}}
+                        <div class="td" contenteditable="true" data-id="{{row.id}}-{{column.id}}" {{action 'updateValue' row column on="keyUp"}} {{action 'updateValue' row column on="focusOut"}} {{action 'updateValue' row column on="focus-out"}}>
+                            {{get row column.id}}
+                        </div>
+                    {{/each}}
+                </div>
+                {{/each}}
+            {{/unless}}
+        {{/if}}
+        {{#if rows6.show}}
+            {{#unless rows6.disabled}}
+                {{#each rows6 as |row ri|}}
+                <div class="tr">
+                    <div class="td">
+                        {{row.id}}
+                    </div>
+                    <div class="td">
+                        {{row.date}}
+                    </div>
+                    {{#each columns as |column index|}}
+                        <div class="td" contenteditable="true" data-id="{{row.id}}-{{column.id}}" {{action 'updateValue' row column on="keyUp"}} {{action 'updateValue' row column on="focusOut"}} {{action 'updateValue' row column on="focus-out"}}>
+                            {{get row column.id}}
+                        </div>
+                    {{/each}}
+                </div>
+                {{/each}}
+            {{/unless}}
+        {{/if}}
+        
+    </div>
+</div>
