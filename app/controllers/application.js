@@ -144,18 +144,17 @@ export default Ember.Controller.extend({
 				let initial = (i-1)*50
 				rows = new Ember.ArrayProxy({
 					show: i==1?true:false,
-					disabled:false,
 					content:this.get('rows').slice( (i-1)*50, i*50 )
 				});
 			} else {
 				rows = new Ember.ArrayProxy({
 					show:false,
-					disabled:true,
 					content:Ember.A()
 				});
 			}
 			this.set('rows'+i,rows);
 		}
+		// this.set('rows',Ember.A());
 	}
 });
 1

@@ -13,6 +13,9 @@ export default Ember.Route.extend({
 	setupController(controller, model) {
 		this._super(...arguments);
 		controller.set('currentRowNumber', 1);
+		if(controller.get('s')!==controller.get('search')){
+			controller.set('search',controller.get('search'));
+		}
 		/*controller.set('rows2.show', false);
 		controller.set('rows3.show', false);
 		controller.set('rows4.show', false);
@@ -114,6 +117,15 @@ export default Ember.Route.extend({
 					this.get('updateTask').perform(checkvalue.value,row,column);
 				}
 			},0);
+		},
+		searchValue(value,event){
+			/*var key = event.keyCode || event.which;
+			if(key!==13){
+				return;
+			}*/
+			if(this.controller.get('search') !== this.controller.get('s')){
+				this.controller.set('s',value);
+			}
 		}
 	}
 });

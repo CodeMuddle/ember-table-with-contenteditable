@@ -15,7 +15,7 @@
         padding 3px;
     }
 </style>
-{{input value=search}}
+{{input value=search enter="searchValue"}}
 <div class="table">
     <div class="thead">
         <div class="tr">
@@ -102,42 +102,38 @@
             {{/each}}
         {{/if}}
         {{#if rows5.show}}
-            {{#unless rows6.disabled}}
-                {{#each rows5 as |row ri|}}
-                <div class="tr">
-                    <div class="td">
-                        {{row.id}}
-                    </div>
-                    <div class="td">
-                        {{row.date}}
-                    </div>
-                    {{#each columns as |column index|}}
-                        <div class="td" contenteditable="true" data-id="{{row.id}}-{{column.id}}" {{action 'updateValue' row column on="keyUp"}} {{action 'updateValue' row column on="focusOut"}} {{action 'updateValue' row column on="focus-out"}}>
-                            {{get row column.id}}
-                        </div>
-                    {{/each}}
+            {{#each rows5 as |row ri|}}
+            <div class="tr">
+                <div class="td">
+                    {{row.id}}
                 </div>
+                <div class="td">
+                    {{row.date}}
+                </div>
+                {{#each columns as |column index|}}
+                    <div class="td" contenteditable="true" data-id="{{row.id}}-{{column.id}}" {{action 'updateValue' row column on="keyUp"}} {{action 'updateValue' row column on="focusOut"}} {{action 'updateValue' row column on="focus-out"}}>
+                        {{get row column.id}}
+                    </div>
                 {{/each}}
-            {{/unless}}
+            </div>
+            {{/each}}
         {{/if}}
         {{#if rows6.show}}
-            {{#unless rows6.disabled}}
-                {{#each rows6 as |row ri|}}
-                <div class="tr">
-                    <div class="td">
-                        {{row.id}}
-                    </div>
-                    <div class="td">
-                        {{row.date}}
-                    </div>
-                    {{#each columns as |column index|}}
-                        <div class="td" contenteditable="true" data-id="{{row.id}}-{{column.id}}" {{action 'updateValue' row column on="keyUp"}} {{action 'updateValue' row column on="focusOut"}} {{action 'updateValue' row column on="focus-out"}}>
-                            {{get row column.id}}
-                        </div>
-                    {{/each}}
+            {{#each rows6 as |row ri|}}
+            <div class="tr">
+                <div class="td">
+                    {{row.id}}
                 </div>
+                <div class="td">
+                    {{row.date}}
+                </div>
+                {{#each columns as |column index|}}
+                    <div class="td" contenteditable="true" data-id="{{row.id}}-{{column.id}}" {{action 'updateValue' row column on="keyUp"}} {{action 'updateValue' row column on="focusOut"}} {{action 'updateValue' row column on="focus-out"}}>
+                        {{get row column.id}}
+                    </div>
                 {{/each}}
-            {{/unless}}
+            </div>
+            {{/each}}
         {{/if}}
         
     </div>
